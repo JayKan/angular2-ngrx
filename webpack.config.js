@@ -3,6 +3,7 @@
 const path = require('path');
 const autoprefixer = require('autoprefixer');
 
+const webpack = require('webpack');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
@@ -64,6 +65,7 @@ config.module = {
 };
 
 config.plugins = [
+  new webpack.optimize.OccurrenceOrderPlugin(true),
   new DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify(NODE_ENV)
   }),
@@ -129,7 +131,7 @@ if (ENV_DEVELOPMENT) {
   config.module.rules.push(rules.sharedStyles);
 
   config.plugins.push(new ProgressPlugin());
-
+  
   config.devServer = {
     contentBase: './src',
     historyApiFallback: true,

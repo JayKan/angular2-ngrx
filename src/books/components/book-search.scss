@@ -1,0 +1,42 @@
+book-search {
+  display: block;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  background: #1d1e1f;
+  height: 141px;
+  z-index: 100;
+  color: #7d7e7f;
+
+  md-card-title,
+  md-card-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  md-input {
+    width: 300px;
+  }
+
+  md-card-spinner {
+    padding-left: 60px; // Make room for the spinner
+  }
+
+  md-spinner {
+    width: 30px !important;
+    height: 30px !important;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    opacity: 0.0;
+
+    path {
+      stroke: #68696a;
+    }
+  }
+
+  md-spinner.show {
+    opacity: 1.0;
+  }
+}

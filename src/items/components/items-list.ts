@@ -1,9 +1,10 @@
-import { Component, ViewEncapsulation, EventEmitter, Input, Output } from '@angular/core';
+import { Component, ViewEncapsulation, EventEmitter, Input, Output, ChangeDetectionStrategy } from '@angular/core';
 import { Item } from '../models/item';
 
 @Component({
   selector: 'items-list',
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template:`
   <div class="fem-card mdl-card mdl-shadow--2dp" *ngFor="let item of items" (click)="selected.emit(item)">
     <div class="mdl-card__title">

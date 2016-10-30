@@ -13,7 +13,6 @@ const initialState: BooksState = {
   selectedBookId: null
 };
 
-
 export function booksReducer(state: BooksState = initialState, action: Action): BooksState {
   switch (action.type) {
     case '[Book] Search Complete':
